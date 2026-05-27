@@ -137,7 +137,7 @@ export function CreateTaskModal({ currentUserId, onTaskCreated }: CreateTaskModa
               placeholder="Provide a comprehensive breakdown of the deliverables..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-955 text-slate-900 dark:text-slate-50 rounded-xl px-4 py-3 text-sm focus-visible:ring-1 focus-visible:ring-indigo-500 focus-visible:border-indigo-500 shadow-2xs min-h-[125px] resize-none transition-colors duration-300"
+              className="w-full border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 rounded-xl px-4 py-3 text-sm focus-visible:ring-1 focus-visible:ring-indigo-500 focus-visible:border-indigo-500 shadow-2xs min-h-[125px] resize-none transition-colors duration-300"
             />
           </div>
           
