@@ -1,6 +1,6 @@
-# OpsPulse: Real-Time Collaborative Task Management Platform
+# NexTask: Real-Time Collaborative Task Management Platform
 
-OpsPulse is a high-performance, collaborative task management application built with a modern decoupled architecture. It features a responsive Next.js frontend (with support for Dark Mode) and a secured Flask REST API backend, backed by PostgreSQL database and Google OAuth via Supabase.
+NexTask is a high-performance, collaborative task management application built with a modern decoupled architecture. It features a responsive Next.js frontend (with support for Dark Mode) and a secured Flask REST API backend, backed by PostgreSQL database and Google OAuth via Supabase.
 
 <br />
 
