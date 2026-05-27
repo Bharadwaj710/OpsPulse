@@ -15,6 +15,23 @@ def token_required(f):
             return jsonify({"success": False, "message": "Authentication token is missing"}), 401
 
         try:
+            # 1. Try local JWT decoding (fast, secure, no network call)
+            if Config.SUPABASE_JWT_SECRET:
+                try:
+                    payload = jwt.decode(
+                        token,
+                        Config.SUPABASE_JWT_SECRET,
+                        algorithms=["HS256"],
+                        audience="authenticated"
+                    )
+                    request.user_id = payload.get("sub")
+                    return f(*args, **kwargs)
+                except jwt.ExpiredSignatureError:
+                    return jsonify({"success": False, "message": "Token has expired"}), 401
+                except jwt.InvalidTokenError as jwt_err:
+                    print(f"Local JWT decode failed, trying Supabase client: {jwt_err}")
+            
+            # 2. Fallback to Supabase client fetch if local decode fails or secret not set
             from supabase import create_client, Client
             
             # Initialize Supabase client
@@ -29,6 +46,8 @@ def token_required(f):
             request.user_id = user_response.user.id
             
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             print(f"Auth error: {e}")
             return jsonify({"success": False, "message": "Authentication failed"}), 401
 
