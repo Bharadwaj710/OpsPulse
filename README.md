@@ -19,8 +19,8 @@ OpsPulse is a high-performance, collaborative task management application built 
       <td align="center"><b>Native Dark Mode Engine</b></td>
     </tr>
     <tr>
-      <td><img src="screenshots/3-edit-task.png" alt="Edit Task" width="400"/></td>
-      <td><img src="screenshots/4-dashboard-dark.png" alt="Create Task Dark Mode" width="400"/></td>
+      <td><img src="screenshots/3-create-task.png" alt="Create Task" width="400"/></td>
+      <td><img src="screenshots/4-dashboard-dark.png" alt="Dashboard Dark Mode" width="400"/></td>
     </tr>
   </table>
 </div>
