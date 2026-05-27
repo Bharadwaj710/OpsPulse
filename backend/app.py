@@ -12,7 +12,7 @@ def create_app():
     db.init_app(app)
 
     @app.route('/')
-    def health_check():
+    def root_health_check():
         return jsonify({"status": "healthy", "service": "OpsPulse API"}), 200
 
     with app.app_context():
